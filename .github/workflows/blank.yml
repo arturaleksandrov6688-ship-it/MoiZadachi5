@@ -33,11 +33,10 @@ jobs:
 
       - name: Build APK
         run: |
-          GRADLEW=$(find android-project -type f -name gradlew | head -n 1)
-          echo "Found gradlew: $GRADLEW"
-          chmod +x "$GRADLEW"
-          cd "$(dirname "$GRADLEW")"
-          ./gradlew assembleDebug
+          PROJECT_DIR=$(find android-project \( -name settings.gradle.kts -o -name settings.gradle \) -type f -print -quit | xargs dirname)
+          echo "Android project: $PROJECT_DIR"
+          cd "$PROJECT_DIR"
+          gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
