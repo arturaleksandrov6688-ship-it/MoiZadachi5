@@ -18,7 +18,7 @@ jobs:
       - name: Unpack Android project
         run: |
           mkdir android-project
-          unzip MoiZadachi-Android-v1.5-GitHub.zip -d android-project
+          unzip MoiZadachi-Android-v1.7-GitHub.zip -d android-project
           echo "Project contents:"
           find android-project -maxdepth 3 -type f
 
