@@ -41,5 +41,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: MoiZadachi-v1.5-APK
+          name: MoiZadachi-v1.7-APK
           path: android-project/**/build/outputs/apk/**/*.apk
